@@ -29,9 +29,9 @@ steps:
     displayName: 'pytest'
 
   - task: PublishTestResults@2
-    condition: succeededOrFailes()
+    condition: succeededOrFailed()
     inputs:
-      testResultFiles: '**/test-*.xml'
+      testResultsFiles: '**/test-*.xml'
       testRunTitle: 'Publish test results for Python $(python.version)'
   - task: PublishCodeCoverageResults@1
     inputs:
